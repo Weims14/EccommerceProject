@@ -1,4 +1,10 @@
-<%= form_tag search_results_path, method: :get do %>
+<%= form_tag search_results_path do %>
 	<%= text_field_tag :search_keywords %>
-	<%= submit_tag 'Search' %>
+	<select name='category_id'>
+		<option value="0">all</option>
+		<%= options_from_collection_for_select(@categories, 'id', 'name') %>
+		<%= submit_tag 'Search' %>
+	</select>
+	
+	
 <% end %>

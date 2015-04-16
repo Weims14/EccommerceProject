@@ -4,7 +4,13 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
-  get 'search_results', to: 'products#search_results', as: 'search_results'
+  get 'show/:id', to: 'products#show', as: 'show'
+
+  match '/', to: 'products#search_results', as: 'search_results', :via => :post
+
+  get 'sales_filter', to: 'products#sales_filter', as: 'sales'
+
+  get 'recent_filter', to: 'products#recent_filter', as: 'recent'
 
 
 
