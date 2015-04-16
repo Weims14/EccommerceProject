@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
+  get 'search_results', to: 'products#search_results', as: 'search_results'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

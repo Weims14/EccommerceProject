@@ -1,0 +1,8 @@
+<h1>Search Results</h1>
+
+<% if @products.size.zero? %>
+		<p>No Products Were Found</p>
+	<% else %>
+		<p><%= pluralize(@products.size, 'Product') %> Found</p>
+		<%= render @products %>
+	<% end %
