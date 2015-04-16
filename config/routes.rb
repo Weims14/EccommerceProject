@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   match '/', to: 'products#search_results', as: 'search_results', :via => :post
 
-  get 'sales_filter', to: 'products#sales_filter', as: 'sales'
+  get 'sales', to: 'products#sales_filter', as: 'sales'
 
-  get 'recent_filter', to: 'products#recent_filter', as: 'recent'
+  get 'recent', to: 'products#recent_filter', as: 'recent'
 
 
 

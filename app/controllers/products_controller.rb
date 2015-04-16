@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
   end
 
   def recent_filter
-    @products = Product.where('created_at > :date', date: 4.days.ago)
+    @products = Product.where('created_at > :date', date: 1.week.ago)
     @categories = Category.all
   end
 
