@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'recent', to: 'products#recent_filter', as: 'recent'
 
+  get 'customer', to: 'customer#view_customer', as: 'customer'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

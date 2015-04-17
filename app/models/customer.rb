@@ -1,3 +1,3 @@
 class Customer < ActiveRecord::Base
-  belongs_to :Province
+  belongs_to :province
 end

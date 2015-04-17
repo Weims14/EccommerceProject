@@ -3,7 +3,7 @@
 	<%= text_field_tag :search_keywords %>
 	<select name='category_id'>
 		<option value="0">All</option>
-		<%= options_from_collection_for_select(@categories, 'id', 'name') %>
+		<%= options_from_collection_for_select(all_categories, 'id', 'name') %>
 		<%= submit_tag 'Search' %>
 	</select>
 	
