@@ -5,11 +5,9 @@ one:
   last_name: MyString
   address: MyString
   city: MyString
-  province: MyString
 
 two:
   first_name: MyString
   last_name: MyString
   address: MyString
   city: MyString
-  province: MyString
