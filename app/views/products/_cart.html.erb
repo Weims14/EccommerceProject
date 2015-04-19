@@ -1,8 +1,9 @@
 <div id="cart">
+
   <% @cart_items.each do |items| %>
   <ul>
     <li><%= items.name %></li>
-    <li><%= number_to_currency items.cost %></li>
+    <li><%= number_to_currency items.price %></li>
   </ul>
   <% end %>
 

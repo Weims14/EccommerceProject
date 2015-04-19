@@ -33,10 +33,37 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
-  private def get_cart_items
-  session[:cart].map do |items|
-    items = Product.find(items)
+  def checkout
+    @cart_items = session[:cart].map do |item|
+      Product.find(item)
+    end
   end
-            end
+
+  def create
+    @cart_items = session[:cart].map do |item|
+      Product.find(item)
+    end
+    @customer = Customer.new
+    @customer.province_id = params[:province]
+    @customer.first_name = params[:first_name]
+    @customer.last_name = params[:last_name]
+    @customer.address = params[:address]
+    @customer.city = params[:city]
+
+    if @customer.save
+      @order = @customer.orders.build
+      @order = 'pending'
+      @order.gst = @customer.province.gst
+      @order.pst = @customer.province.pst
+      @order.hst = @customer.province.hst
+    end
+
+  end
+
+  private def get_cart_items
+    session[:cart].map do |item|
+      items = Product.find(item)
+    end
+  end
 
 end

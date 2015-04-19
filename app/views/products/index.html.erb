@@ -4,7 +4,7 @@
 <h2>All Products</h2>
 
 <p>Products table size: <%= @products.size %></p>
-
+<%= session[:cart].inspect %>
 
 <%= render @products %>
 <%= render partial: 'products/cart' %>

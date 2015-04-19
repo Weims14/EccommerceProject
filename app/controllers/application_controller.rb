@@ -14,4 +14,10 @@ class ApplicationController < ActionController::Base
     Category.all
   end
   helper_method :all_categories
+
+  private
+  def all_provinces
+    Province.all
+  end
+  helper_method :all_provinces
 end

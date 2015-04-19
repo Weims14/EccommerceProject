@@ -14,7 +14,11 @@ Rails.application.routes.draw do
 
   get 'customer', to: 'customer#view_customer', as: 'customer'
 
-  match 'products/add/:id' => 'products#add_item_to_cart', as: 'add_item_to_cart', id: /\d+/, :via => :get
+  match '/products/add/:id' => 'products#add_item_to_cart', as: 'add_item_to_cart', id: /\d+/, :via => :get
+
+  get '/products/checkout' => 'products#checkout', as: 'checkout'
+  match '/products/create.html.erb' => 'products#create', as: 'create', :via => :post
+
 
 
 
