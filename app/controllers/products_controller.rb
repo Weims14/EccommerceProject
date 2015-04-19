@@ -43,23 +43,27 @@ class ProductsController < ApplicationController
     @cart_items = session[:cart].map do |item|
       Product.find(item)
     end
-    @customer = Customer.new
+    @customer = Customer.create
     @customer.province_id = params[:province]
     @customer.first_name = params[:first_name]
     @customer.last_name = params[:last_name]
     @customer.address = params[:address]
     @customer.city = params[:city]
 
-    if @customer.save
+    if @customer.save!
       @order = @customer.orders.build
-      @order = 'pending'
+      @order.status = 'pending'
       @order.gst = @customer.province.gst
       @order.pst = @customer.province.pst
       @order.hst = @customer.province.hst
 
-      if @order.save
+      if @order.save!
         @cart_items.each do |item|
           @line_item = @order.line_items.build
+          @line_item.quantity = 1
+          @line_item.product = item
+          @line_item.price = item.price
+          @line_item.save!
         end
       end
     end
