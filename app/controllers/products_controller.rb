@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
     @categories = Category.all
   end
 
-  def add_to_cart
+  def add_item_to_cart
     session[:cart] << params[:id]
     redirect_to root_path
   end

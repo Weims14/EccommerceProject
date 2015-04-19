@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'customer', to: 'customer#view_customer', as: 'customer'
 
+  match 'products/add/:id' => 'products#add_item_to_cart', as: 'add_item_to_cart', id: /\d+/, :via => :get
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

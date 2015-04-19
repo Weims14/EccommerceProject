@@ -8,6 +8,8 @@
 		<li><strong>Price:</strong> <%= number_to_currency product.price %></li>
 
 		<li><%= product.description %></li>
+
+        <li><%= link_to 'Add to Cart', add_item_to_cart_path(:id => product.id) %></li>
 		<br>
 
 		<li><strong>category:</strong><%= product.category.name %></li>
