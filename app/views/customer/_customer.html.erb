@@ -5,15 +5,15 @@
 
 
 		
-		<li><strong>Name:</strong> <%= customer.first_name, customer.last_name %></li>
+		<li><strong>Name:</strong> <%= @customers.first_name, @customers.last_name %></li>
 
-		<li><%= customer.address %></li>
-		<li> <%= customer.city %>/</li>
-		 <li><%= customer.province %></li>
+		<li><%= @customers.address %></li>
+		<li> <%= @customers.city %>/</li>
+		 <li><%= @customers.province %></li>
 		<br>
-		<li><%= province.gst %></li>
-		<li><%= province.pst %></li>
-		<li><%= province.hst %></li>
+		<li><%= @provinces.gst %></li>
+		<li><%= @provinces.pst %></li>
+		<li><%= @provinces.hst %></li>
 
 		
 	</ul>
