@@ -56,6 +56,12 @@ class ProductsController < ApplicationController
       @order.gst = @customer.province.gst
       @order.pst = @customer.province.pst
       @order.hst = @customer.province.hst
+
+      if @order.save
+        @cart_items.each do |item|
+          @line_item = @order.line_items.build
+        end
+      end
     end
 
   end
