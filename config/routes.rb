@@ -4,20 +4,20 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
-  get 'show/:id', to: 'products#show', as: 'show'
+  get 'show/:id',                    to: 'products#show',             as: 'show'
 
-  match '/', to: 'products#search_results', as: 'search_results', :via => :post
+  match '/',                         to: 'products#search_results',   as: 'search_results', :via => :post
 
-  get 'sales', to: 'products#sales_filter', as: 'sales'
+  get 'sales',                       to: 'products#sales_filter',     as: 'sales'
 
-  get 'recent', to: 'products#recent_filter', as: 'recent'
+  get 'recent',                      to: 'products#recent_filter',    as: 'recent'
 
-  get 'customer', to: 'customer#view_customer', as: 'customer'
+  get 'customer',                    to: 'customer#view_customer',    as: 'customer'
 
-  match '/products/add/:id' => 'products#add_item_to_cart', as: 'add_item_to_cart', id: /\d+/, :via => :get
+  match '/products/add/:id',         to: 'products#add_item_to_cart', as: 'add_item_to_cart', id: /\d+/, :via => :get
 
-  get '/products/checkout' => 'products#checkout', as: 'checkout'
-  match '/products/create.html.erb' => 'products#create', as: 'create', :via => :post
+  get '/products/checkout',          to: 'products#checkout',         as: 'checkout'
+  match '/products/create.html.erb', to: 'products#create',           as: 'create', :via => :post
 
 
 

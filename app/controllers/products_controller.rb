@@ -72,7 +72,8 @@ class ProductsController < ApplicationController
     flash[:alert] = 'Order succesfully completed'
   end
 
-  private def get_cart_items
+  private
+  def get_cart_items
     session[:cart].map do |item|
       items = Product.find(item)
     end
