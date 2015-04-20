@@ -67,7 +67,9 @@ class ProductsController < ApplicationController
         end
       end
     end
-
+    reset_session
+    redirect_to root_path
+    flash[:alert] = 'Order succesfully completed'
   end
 
   private def get_cart_items

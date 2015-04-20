@@ -1,5 +1,5 @@
 ActiveAdmin.register Order do
-permit_params :gst, :hst, :pst, :created_at, :updated_at, :status, :customer_id
+permit_params :gst, :hst, :pst, :created_at, :updated_at, :status, :customer_id, :line_item_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
